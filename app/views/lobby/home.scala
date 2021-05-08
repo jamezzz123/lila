@@ -17,7 +17,7 @@ object home {
     views.html.base.layout(
       title = "",
       fullTitle = Some {
-        s"lichess.${if (netConfig.isProd) "org" else "dev"} • ${trans.freeOnlineChess.txt()}"
+        s"scacchi.${if (netConfig.isProd) "org" else "it"} • ${trans.freeOnlineChess.txt()}"
       },
       moreJs = frag(
         jsModule("lobby"),
@@ -167,35 +167,35 @@ object home {
             views.html.forum.post recent forumRecent
           )
         ),
-        bits.lastPosts(lastPost),
-        div(cls := "lobby__support")(
-          a(href := routes.Plan.index)(
-            iconTag(patronIconChar),
-            span(cls := "lobby__support__text")(
-              strong(trans.patron.donate()),
-              span(trans.patron.becomePatron())
-            )
-          ),
-          a(href := "https://shop.spreadshirt.com/lichess-org")(
-            iconTag(""),
-            span(cls := "lobby__support__text")(
-              strong("Swag Store"),
-              span(trans.playChessInStyle())
-            )
-          )
-        ),
-        div(cls := "lobby__about")(
-          ctx.blind option h2("About"),
-          a(href := "/about")(trans.aboutX("Lichess")),
-          a(href := "/faq")(trans.faq.faqAbbreviation()),
-          a(href := "/contact")(trans.contact.contact()),
-          a(href := "/mobile")(trans.mobileApp()),
-          a(href := routes.Page.tos)(trans.termsOfService()),
-          a(href := "/privacy")(trans.privacy()),
-          a(href := "/source")(trans.sourceCode()),
-          a(href := "/ads")("Ads"),
-          views.html.base.bits.connectLinks
-        )
+        bits.lastPosts(lastPost)
+        // div(cls := "lobby__support")(
+        //   a(href := routes.Plan.index)(
+        //     iconTag(patronIconChar),
+        //     span(cls := "lobby__support__text")(
+        //       strong(trans.patron.donate()),
+        //       span(trans.patron.becomePatron())
+        //     )
+        //   ),
+        //   a(href := "https://shop.spreadshirt.com/lichess-org")(
+        //     iconTag(""),
+        //     span(cls := "lobby__support__text")(
+        //       strong("Swag Store"),
+        //       span(trans.playChessInStyle())
+        //     )
+        //   )
+        // )
+        // div(cls := "lobby__about")(
+        //   ctx.blind option h2("About"),
+        //   a(href := "/about")(trans.aboutX("Lichess")),
+        //   a(href := "/faq")(trans.faq.faqAbbreviation()),
+        //   a(href := "/contact")(trans.contact.contact()),
+        //   a(href := "/mobile")(trans.mobileApp()),
+        //   a(href := routes.Page.tos)(trans.termsOfService()),
+        //   a(href := "/privacy")(trans.privacy()),
+        //   a(href := "/source")(trans.sourceCode()),
+        //   a(href := "/ads")("Ads"),
+        //   views.html.base.bits.connectLinks
+        // )
       )
     }
   }

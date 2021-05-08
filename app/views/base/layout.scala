@@ -208,9 +208,9 @@ object layout {
           metaCsp(csp),
           metaThemeColor,
           st.headTitle {
-            if (ctx.blind) "lichess"
-            else if (netConfig.isProd) fullTitle | s"$title • lichess.org"
-            else s"[dev] ${fullTitle | s"$title • lichess.dev"}"
+            if (ctx.blind) "scacchi"
+            else if (netConfig.isProd) fullTitle | s"$title • scacchi.it"
+            else s"${fullTitle | s"$title • scacchi.it"}"
           },
           cssTag("site"),
           ctx.pref.is3d option cssTag("board-3d"),
@@ -345,8 +345,8 @@ object layout {
             if (ctx.kid) span(title := trans.kidMode.txt(), cls := "kiddo")(":)")
             else ctx.isBot option botImage,
             a(href := "/")(
-              "lichess",
-              span(if (netConfig.isProd) ".org" else ".dev")
+              "scacchi",
+              span(if (netConfig.isProd) ".org" else ".it")
             )
           ),
           ctx.blind option h2("Navigation"),

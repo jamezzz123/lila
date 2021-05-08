@@ -528,7 +528,7 @@ export default function (token: string) {
       const moves = data.state.moves.split(' ');
       for (let i = 0; i < moves.length; i++) {
         if (moves[i] != '') {
-          //Make any move that may have been already played on the ChessBoard. Useful when reconnecting
+          //Make any move that may have been already played on the ChessBoard. Useful when 
           const uciMove = <NormalMove>parseUci(moves[i]);
           const normalizedMove = chess.normalizeMove(uciMove); //This is because chessops uses UCI_960
           if (normalizedMove && chess.isLegal(normalizedMove)) chess.play(normalizedMove);
