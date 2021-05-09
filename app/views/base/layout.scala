@@ -15,7 +15,7 @@ object layout {
   object bits {
     val doctype                      = raw("<!DOCTYPE html>")
     def htmlTag(implicit lang: Lang) = html(st.lang := lang.code)
-    val topComment                   = raw("""<!-- Lichess is open source! See https://lichess.org/source -->""")
+    val topComment                   = raw("""<!-- -->""")
     val charset                      = raw("""<meta charset="utf-8">""")
     val viewport = raw(
       """<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">"""
@@ -346,7 +346,7 @@ object layout {
             else ctx.isBot option botImage,
             a(href := "/")(
               "scacchi",
-              span(if (netConfig.isProd) ".org" else ".it")
+              span(if (netConfig.isProd) ".it" else ".it")
             )
           ),
           ctx.blind option h2("Navigation"),

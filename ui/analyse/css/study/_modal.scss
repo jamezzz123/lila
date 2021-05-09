@@ -2,7 +2,8 @@
   &#modal-wrap {
     padding: 1rem;
     min-width: 80vw;
-
+    background-color: #d8dee5 !important;
+    color:#ffffff !important;
     @include breakpoint($mq-x-small) {
       min-width: 500px;
     }
@@ -11,6 +12,7 @@
   > div {
     padding: 1rem;
     overflow-y: auto;
+    background-color: #d8dee5 !important;
   }
 
   .form3 {

@@ -14,7 +14,7 @@ object embed {
 
   def apply(daily: DailyPuzzle.WithHtml)(implicit config: EmbedConfig) =
     views.html.base.embed(
-      title = "lichess.org chess puzzle",
+      title = "scacchi.it chess puzzle",
       cssModule = "tv.embed"
     )(
       dailyLink(daily)(config.lang)(

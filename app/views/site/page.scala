@@ -113,7 +113,7 @@ $('#asset-version-message').text(lichess.info.message);"""
         div(cls := "box box-pad developers body") {
           val args = """style="width: 400px; height: 444px;" allowtransparency="true" frameborder="0""""
           frag(
-            h1(id := "embed-tv")("Embed Lichess TV in your site"),
+            h1(id := "embed-tv")("Embed scacchi it in your site"),
             div(cls := "center")(raw(s"""<iframe src="/tv/frame?theme=brown&bg=dark" $args></iframe>""")),
             p("Add the following HTML to your site:"),
             p(cls := "copy-zone")(
@@ -209,7 +209,7 @@ $('#asset-version-message').text(lichess.info.message);"""
       def activeCls(c: String) = cls := active.activeO(c)
       main(cls := "page-menu")(
         st.nav(cls := "page-menu__menu subnav")(
-          a(activeCls("about"), href := "/about")(trans.aboutX("lichess.org")),
+          a(activeCls("about"), href := "/about")(trans.aboutX("scacchi.it")),
           a(activeCls("faq"), href := routes.Main.faq)(trans.faq.faqAbbreviation()),
           a(activeCls("contact"), href := routes.Main.contact)(trans.contact.contact()),
           a(activeCls("tos"), href := routes.Page.tos)(trans.termsOfService()),

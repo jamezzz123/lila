@@ -141,12 +141,12 @@ object home {
           else
             div(cls := "about-side")(
               ctx.blind option h2("About"),
-              trans.xIsAFreeYLibreOpenSourceChessServer(
-                "Lichess",
-                a(cls := "blue", href := routes.Plan.features)(trans.really.txt())
-              ),
-              " ",
-              a(href := "/about")(trans.aboutX("Lichess"), "...")
+              // trans.xIsAFreeYLibreOpenSourceChessServer(
+              //   "Lichess",
+              //   a(cls := "blue", href := routes.Plan.features)(trans.really.txt())
+              // ),
+              // " ",
+              // a(href := "/about")(trans.aboutX("Lichess"), "...")
             )
         ),
         featured map { g =>

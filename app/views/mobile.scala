@@ -40,7 +40,6 @@ object mobile {
                 li(trans.puzzles()),
                 li(trans.gameAnalysis()),
                 li(trans.boardEditor()),
-                li("Lichess TV"),
                 li(trans.followAndChallengeFriends()),
                 li(trans.availableInNbLanguages.pluralSame(80))
               )
