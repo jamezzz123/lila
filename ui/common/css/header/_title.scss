@@ -7,7 +7,7 @@
   white-space: nowrap;
   margin: 0 0.5rem;
   display: none;
-
+  color:#ffffff !important;
   @include breakpoint($mq-xx-small) {
     display: block;
   }
@@ -30,7 +30,7 @@
   a {
     color: $c-font;
     text-decoration: none;
-
+    color: #fff;
     &:hover {
       color: $c-primary;
 
@@ -41,7 +41,7 @@
   }
 
   span {
-    color: $c-font-dim;
+    color: #ffffff;
   }
 
   .kiddo {

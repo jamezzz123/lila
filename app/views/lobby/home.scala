@@ -159,15 +159,15 @@ object home {
         },
         ctx.noBot option bits.underboards(tours, simuls, leaderboard, tournamentWinners),
         ctx.noKid option div(cls := "lobby__forum lobby__box")(
-          a(cls := "lobby__box__top", href := routes.ForumCateg.index)(
-            h2(cls := "title text", dataIcon := "d")(trans.latestForumPosts()),
-            span(cls := "more")(trans.more(), " »")
-          ),
-          div(cls := "lobby__box__content")(
-            views.html.forum.post recent forumRecent
-          )
+          // a(cls := "lobby__box__top", href := routes.ForumCateg.index)(
+          //   h2(cls := "title text", dataIcon := "d")(trans.latestForumPosts()),
+          //   span(cls := "more")(trans.more(), " »")
+          // ),
+        //   div(cls := "lobby__box__content")(
+        //     views.html.forum.post recent forumRecent
+        //   )
         ),
-        bits.lastPosts(lastPost)
+         bits.lastPosts(lastPost)
         // div(cls := "lobby__support")(
         //   a(href := routes.Plan.index)(
         //     iconTag(patronIconChar),
