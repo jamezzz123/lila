@@ -89,19 +89,19 @@ object bits {
         a(cls := "lobby__box__top", href := routes.Blog.index())(
           h2(cls := "title text", dataIcon := "6")(trans.latestUpdates()),
           span(cls := "more")(trans.more(), " »")
-        ),
-        div(cls := "lobby__box__content")(
-          posts map { post =>
-            a(cls := "post", href := routes.Blog.show(post.id, post.slug))(
-              img(src := post.image),
-              span(cls := "text")(
-                strong(post.title),
-                span(post.shortlede)
-              ),
-              semanticDate(post.date)
-            )
-          }
         )
+        // div(cls := "lobby__box__content")(
+        //   posts map { post =>
+        //     a(cls := "post", href := routes.Blog.show(post.id, post.slug))(
+        //       img(src := post.image),
+        //       span(cls := "text")(
+        //         strong(post.title),
+        //         span(post.shortlede)
+        //       ),
+        //       semanticDate(post.date)
+        //     )
+        //   }
+        // )
       )
 
   def playbanInfo(ban: lila.playban.TempBan)(implicit ctx: Context) =

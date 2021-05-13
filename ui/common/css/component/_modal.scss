@@ -7,8 +7,8 @@
 
   &-wrap {
     @extend %box-radius, %popup-shadow, %flex-column;
-
-    background: $c-bg-box;
+    // background: #d8dee5;
+    background: #4e84b3;
     position: relative;
     padding: 2rem;
     text-align: center;
