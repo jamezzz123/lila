@@ -68,7 +68,7 @@ export default class StrongSocket {
     pingDelay: 2500, // time between pong and ping
     autoReconnectDelay: 3500,
     protocol: location.protocol === 'https:' ? 'wss:' : 'ws:',
-    isAuth: document.body.hasAttribute('user'),
+    isAuth:false,
   };
   static defaultParams: Params = {
     sri: sri,
@@ -106,6 +106,11 @@ export default class StrongSocket {
   connect = () => {
     this.destroy();
     this.autoReconnect = true;
+    console.log('--------------------');
+    console.log(this.settings);
+    console.log(this.options);
+    console.log(this.url);
+    console.log('--------------------');
     const fullUrl = xhr.url(this.options.protocol + '//' + this.baseUrl() + this.url, {
       ...this.settings.params,
       v: this.version === false ? undefined : this.version,
@@ -200,10 +205,7 @@ export default class StrongSocket {
     clearTimeout(this.connectSchedule);
     const pingData =
       this.options.isAuth && this.pongCount % 8 == 2
-        ? JSON.stringify({
-            t: 'p',
-            l: Math.round(0.1 * this.averageLag),
-          })
+        ? 'null'
         : 'null';
     try {
       this.ws!.send(pingData);
@@ -257,7 +259,7 @@ export default class StrongSocket {
     }
   };
 
-  debug = (msg: string, always = false) => {
+  debug = (msg: string, always = true) => {
     if (always || this.options.debug) console.debug(msg);
   };
 
