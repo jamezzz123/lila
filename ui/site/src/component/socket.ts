@@ -151,6 +151,9 @@ export default class StrongSocket {
 
   send = (t: string, d: any, o: any = {}, noRetry = false) => {
     const msg: Partial<MsgOut> = { t };
+    console.log(d);
+    console.log(t);
+    console.log(o);
     if (d !== undefined) {
       if (o.withLag) d.l = Math.round(this.averageLag);
       if (o.millis >= 0) d.s = Math.round(o.millis * 0.1).toString(36);

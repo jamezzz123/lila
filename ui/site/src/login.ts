@@ -4,13 +4,14 @@ import spinnerHtml from './component/spinner';
 
 export function loginStart() {
   const selector = '.auth-login form';
-
   (function load() {
     const form = document.querySelector(selector) as HTMLFormElement,
       $f = $(form);
+     
     form.addEventListener('submit', (e: Event) => {
       e.preventDefault();
       $f.find('.submit').prop('disabled', true);
+      console.log({...xhr.defaultInit});
       fetch(form.action, {
         ...xhr.defaultInit,
         headers: xhr.xhrHeader,
@@ -19,6 +20,7 @@ export function loginStart() {
       })
         .then(res => res.text().then(text => [res, text]))
         .then(([res, text]: [Response, string]) => {
+          console.log(res);
           if (text === 'MissingTotpToken' || text === 'InvalidTotpToken') {
             $f.find('.one-factor').hide();
             $f.find('.two-factor').removeClass('none');
