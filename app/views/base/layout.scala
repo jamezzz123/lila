@@ -344,7 +344,7 @@ object layout {
           h1(cls := "site-title")(
             if (ctx.kid) span(title := trans.kidMode.txt(), cls := "kiddo")(":)")
             else ctx.isBot option botImage,
-            a(href := "/")(
+            a(href := "https://scacchi.it/")(
               "scacchi",
               span(if (netConfig.isProd) ".it" else ".it")
             )
