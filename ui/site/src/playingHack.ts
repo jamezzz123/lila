@@ -4,8 +4,8 @@ window.addEventListener('load', function () {
            setInterval(() => {
                let a = getRandomIntInclusive(100,1000);
                let b = getRandomIntInclusive(100,a);
-               document.querySelector('nb_games_in_play').innerHTML = a.toString();
-               document.querySelector('.nb_connected_players').innerHTML = b.toString();
+               document.querySelector('#nb_games_in_play').innerHTML = a.toString();
+               document.querySelector('#nb_connected_players').innerHTML = b.toString();
            }, 30000)
    
        }
