@@ -35,10 +35,10 @@ window.addEventListener('load', function () {
           const forGamesInPlay = getRandomIntInclusive(100, 1000);
           const forPlayers = getRandomIntInclusive(100, forGamesInPlay);
           const nb_games_in_play = document.querySelector('#nb_games_in_play');
-          const nb_connected_players = document.querySelector('#nb_games_in_play');
+          const nb_connected_players = document.querySelector('#nb_connected_players');
           if (nb_games_in_play !== null && nb_connected_players !== null) {
-              nb_games_in_play.innerHTML = forGamesInPlay.toString();
-              nb_connected_players.innerHTML = forPlayers.toString();
+              nb_games_in_play.innerHTML = forGamesInPlay.toString() + 'games in play';
+              nb_connected_players.innerHTML = forPlayers.toString() + 'players';
           }
       }, 30000)
 
